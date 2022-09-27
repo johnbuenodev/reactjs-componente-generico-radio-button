@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Radiobutton from './components/Radiobutton';
 
 function App() {
+
+  const handleValueRadiobutton = (values) => {
+    console.log("Array:");
+    //tratar os dados aqui
+    console.log(values);
+  }
+
+  const titleComponent = "Selecione: ";
+
+  //Pode ter qualquer tipo de valor no value , o name que manda em quem está clicado, 
+  //objeto retornado por callback para ser tratado da melhor forma para o processo
+
+  const arrayData = [ 
+    {name:"sim",value:true},
+    {name:"não",value:false},
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Radiobutton handleValueRadiobutton={handleValueRadiobutton} titleComponent={titleComponent} arrayData={arrayData} />
     </div>
   );
 }
